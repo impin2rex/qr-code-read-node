@@ -1,14 +1,14 @@
 {
   "name": "qr-code-read-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a QR Code reader prototype using node.",
   "main": "index.js",
   "scripts": {
     "start": "node index",
     "watch": "nodemon index"
   },
   "keywords": [],
-  "author": "",
+  "author": "impin2rex",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -24,5 +24,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/impin2rex/qr-code-read-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/impin2rex/qr-code-read-node/issues"
+  },
+  "homepage": "https://github.com/impin2rex/qr-code-read-node#readme"
 }
