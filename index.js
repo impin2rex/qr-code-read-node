@@ -60,10 +60,12 @@ function checkFileType(file, cb) {
 }
 
 app.get("/", (req, res) => {
+  if(fs.existsSync(upStorage)) {
+    fsExtra.emptyDirSync(upStorage);
+  }
   if (!fs.existsSync(upStorage)) {
     fs.mkdirSync(upStorage);
   }
-  // fsExtra.emptyDirSync(upStorage);
   res.render("index");
 });
 
@@ -139,14 +141,8 @@ app.post("/", upload.single("image"), async (req, res, next) => {
       ext: ext,
       code: qrCodeText,
     });
-    setTimeout(() => {
-      fsExtra.emptyDirSync(upStorage);
-    }, 30000);
   } catch (err) {
     res.render("error", { err: "Sorry! Coudn't read!" });
-    setTimeout(() => {
-      fsExtra.emptyDirSync(upStorage);
-    }, 30000);
   }
 });
 
