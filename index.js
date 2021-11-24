@@ -92,7 +92,7 @@ app.post("/", upload.single("image"), async (req, res, next) => {
     let qrCodeText;
     const fileData = fs.readFileSync(file.path);
     if (ext === "jpg") {
-      const jpg = jpeg.decode(imagedata, { useTArray: true });
+      const jpg = jpeg.decode(fileData, { useTArray: true });
       const qrArray = new Uint8ClampedArray(jpg.data.buffer);
       qrCodeText = jsQR(qrArray, jpg.width, jpg.height).data;
     }
